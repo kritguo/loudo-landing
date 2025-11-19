@@ -1,51 +1,80 @@
-
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="utf-8" />
-  <title>Loudo - 进入小程序激活卡密</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: #0f172a;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, -apple-system, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
-    }
-    .page {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px 16px;
-    }
-    .card-link {
-      display: block;
-      max-width: 420px;
-      width: 100%;
-      text-decoration: none;
-    }
-    .card-link img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 20px;
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
-    }
-  </style>
-</head>
-<body>
-  <div class="page">
-    <!-- 点击整张图，跳转到「激活卡密」小程序页面 -->
-    <a
-      class="card-link"
-      href="weixin://dl/business/?appid=wxe2a88c595d205ed7&amp;path=pages/activate/activate"
-    >
-      <!-- 这里用的是「进入小程序激活卡密」那张图片的文件名 -->
-      <img
-        src="../activate-card.png"
-        alt="进入小程序激活卡密"
-      />
-    </a>
-  </div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Loudo - 进入小程序激活卡密</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #0f172a;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui,
+          -apple-system, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #e5e7eb;
+      }
+
+      .page {
+        width: 100%;
+        max-width: 440px;
+        padding: 24px 16px 32px;
+      }
+
+      .title {
+        font-size: 18px;
+        margin-bottom: 16px;
+        color: #60a5fa;
+      }
+
+      .card-link {
+        display: block;
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid #1f2937;
+        text-decoration: none;
+      }
+
+      .card-link img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .tip {
+        margin-top: 16px;
+        font-size: 12px;
+        line-height: 1.6;
+        color: #9ca3af;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="title">进入小程序激活卡密</div>
+
+      <!-- 这里是卡片图片，同目录下的 activate-card.png -->
+      <a
+        class="card-link"
+        href="weixin://dl/business/?appid=wxe2a88c595d205ed7&path=pages/activate/activate"
+      >
+        <img src="activate-card.png" alt="激活卡密卡片" />
+      </a>
+
+      <div class="tip">
+        如果没有自动拉起小程序，请复制上方链接到微信里打开，或在微信中扫一扫当前网页二维码。
+      </div>
+    </div>
+  </body>
 </html>
