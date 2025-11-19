@@ -1,19 +1,32 @@
 
 <!DOCTYPE html>
-<html lang="zh">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loudo 激活卡密</title>
-<style>
-  body { margin:0; padding:0; font-family:Arial, sans-serif; }
-  .container { width:100%; max-width:480px; margin:auto; text-align:center; }
-  img { width:100%; display:block; }
-</style>
+  <meta charset="UTF-8" />
+  <title>Loudo 激活卡密</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-family: Arial;
+      background-color: #f7f7f7;
+    }
+    img {
+      width: 100%;
+      max-width: 400px;
+      margin-top: 40px;
+    }
+  </style>
+  <script>
+    // 页面打开 800ms 后自动跳转小程序
+    setTimeout(function() {
+      window.location.href =
+        "weixin://dl/business/?appid=wxe2a88c595d205ed7&path=pages/activate/activate";
+    }, 800);
+  </script>
 </head>
 <body>
-  <div class="container">
-    <img src="./A_digital_graphic_design_promotional_image_feature.png" />
-  </div>
+  <img src="./A_digital_graphic_d...l_image_feature.png" alt="激活卡密" />
 </body>
 </html>
