@@ -1,20 +1,33 @@
-
 <!DOCTYPE html>
-<html lang="zh">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loudo 测评</title>
-<style>
-  body { margin:0; padding:0; font-family:Arial, sans-serif; }
-  .container { width:100%; max-width:480px; margin:auto; text-align:center; }
-  img { width:100%; display:block; }
-</style>
+  <meta charset="UTF-8" />
+  <title>Loudo 表达测评</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-family: Arial;
+      background-color: #f7f7f7;
+    }
+    img {
+      width: 100%;
+      max-width: 400px;
+      margin-top: 40px;
+    }
+  </style>
+  <script>
+    // 页面打开自动跳转到小程序入口
+    setTimeout(function() {
+      window.location.href =
+        "weixin://dl/business/?appid=wxe2a88c595d205ed7&path=subpackages/expression/pages/expression-intro/expression-intro";
+    }, 800);
+  </script>
 </head>
 <body>
-  <div class="container">
-    <img src="./A_digital_graphic_design_image_features_a_promotio.png" />
-  </div>
+  <img src="./A_digital_graphic_d...ures_a_promotio.png" alt="表达测评" />
 </body>
 </html>
+
 
