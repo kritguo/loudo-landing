@@ -39,70 +39,23 @@
         width: 100%;
         max-width: 440px;
         margin: 0 auto;
-        padding: 20px;
         border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid #1f2937;
         text-decoration: none;
-        background: linear-gradient(135deg, #a855f7, #6366f1);
-        color: #e5e7eb;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        transition: transform 150ms ease, box-shadow 150ms ease;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        transition: transform 120ms ease, box-shadow 120ms ease;
       }
 
       .card-link:hover {
         transform: translateY(-2px);
-        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
       }
 
-      .card-title {
-        font-size: 20px;
-        font-weight: 700;
-        letter-spacing: 0.2px;
-        margin-bottom: 8px;
-      }
-
-      .card-subtitle {
-        font-size: 14px;
-        color: rgba(229, 231, 235, 0.8);
-        margin-bottom: 16px;
-      }
-
-      .steps {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 12px;
-      }
-
-      .steps li {
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-        font-size: 14px;
-        margin-bottom: 10px;
-        color: #e5e7eb;
-      }
-
-      .step-badge {
-        width: 22px;
-        height: 22px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.14);
-        display: grid;
-        place-items: center;
-        font-size: 12px;
-        font-weight: 700;
-      }
-
-      .cta {
-        margin-top: 12px;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-weight: 600;
-      }
-
-      .arrow {
-        font-size: 14px;
+      .card-link img {
+        display: block;
+        width: 100%;
+        height: auto;
       }
 
       .tip {
@@ -122,25 +75,7 @@
         class="card-link"
         href="weixin://dl/business/?appid=wxe2a88c595d205ed7&path=subpackages/expression/pages/expression-intro/expression-intro"
       >
-        <div class="card-title">表达测评</div>
-        <div class="card-subtitle">进入小程序，完成测评获取表达力报告</div>
-        <ul class="steps">
-          <li>
-            <span class="step-badge">1</span>
-            <span>点击进入 Loudo 表达测评页</span>
-          </li>
-          <li>
-            <span class="step-badge">2</span>
-            <span>按提示完成读题与录音</span>
-          </li>
-          <li>
-            <span class="step-badge">3</span>
-            <span>查看得分与改进建议</span>
-          </li>
-        </ul>
-        <div class="cta">
-          进入测评 <span class="arrow">→</span>
-        </div>
+        <img src="expression-card.jpg" alt="表达测评卡片" />
       </a>
 
       <div class="tip">
