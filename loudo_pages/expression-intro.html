@@ -35,16 +35,21 @@
       }
 
       .card-link {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         max-width: 440px;
         margin: 0 auto;
+        padding: 60px 40px;
         border-radius: 24px;
-        overflow: hidden;
-        border: 1px solid #1f2937;
+        background: linear-gradient(135deg, #5b9ba6 0%, #4a7c87 100%);
         text-decoration: none;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
         transition: transform 120ms ease, box-shadow 120ms ease;
+        min-height: 400px;
+        position: relative;
       }
 
       .card-link:hover {
@@ -52,10 +57,40 @@
         box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
       }
 
-      .card-link img {
-        display: block;
-        width: 100%;
-        height: auto;
+      .card-brand {
+        font-size: 48px;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 60px;
+        letter-spacing: 0.5px;
+      }
+
+      .card-content {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .card-title {
+        font-size: 32px;
+        font-weight: 500;
+        color: #ffffff;
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .card-button {
+        background: rgba(255, 255, 255, 0.25);
+        color: #ffffff;
+        padding: 16px 48px;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: 400;
+        backdrop-filter: blur(10px);
+        transition: background 0.2s ease;
+      }
+
+      .card-link:hover .card-button {
+        background: rgba(255, 255, 255, 0.3);
       }
 
       .tip {
@@ -75,7 +110,13 @@
         class="card-link"
         href="weixin://dl/business/?appid=wxe2a88c595d205ed7&path=subpackages/expression/pages/expression-intro/expression-intro"
       >
-        <img src="expression-card.jpg" alt="表达测评卡片" />
+        <div class="card-brand">Loudo</div>
+        <div class="card-content">
+          <div class="card-title">表达测评</div>
+          <div class="card-title">点击进入小程序</div>
+          <div class="card-title">开始测评</div>
+        </div>
+        <div class="card-button">前往小程序</div>
       </a>
 
       <div class="tip">
