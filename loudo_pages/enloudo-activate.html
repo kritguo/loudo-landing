@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>Enloudo - 进入小程序激活英语日常卡密</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #0f172a;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui,
+          -apple-system, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #e5e7eb;
+      }
+
+      .page {
+        width: 100%;
+        max-width: 440px;
+        padding: 24px 16px 32px;
+      }
+
+      .title {
+        font-size: 18px;
+        margin-bottom: 16px;
+        color: #60a5fa;
+      }
+
+      .card-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto;
+        padding: 60px 40px;
+        border-radius: 24px;
+        background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        text-decoration: none;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        transition: transform 120ms ease, box-shadow 120ms ease;
+        min-height: 400px;
+        position: relative;
+      }
+
+      .card-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+      }
+
+      .card-brand {
+        font-size: 48px;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 60px;
+        letter-spacing: 0.5px;
+      }
+
+      .card-content {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .card-title {
+        font-size: 32px;
+        font-weight: 500;
+        color: #ffffff;
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+
+      .card-subtitle {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.9);
+        margin-top: 12px;
+      }
+
+      .card-button {
+        background: rgba(255, 255, 255, 0.25);
+        color: #ffffff;
+        padding: 16px 48px;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: 400;
+        backdrop-filter: blur(10px);
+        transition: background 0.2s ease;
+      }
+
+      .card-link:hover .card-button {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .tip {
+        margin-top: 16px;
+        font-size: 12px;
+        line-height: 1.6;
+        color: #9ca3af;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="title">进入小程序激活英语日常卡密</div>
+
+      <a
+        class="card-link"
+        href="weixin://dl/business/?appid=wxe2a88c595d205ed7&path=pages/activate/activate"
+      >
+        <div class="card-brand">Enloudo</div>
+        <div class="card-content">
+          <div class="card-title">英语日常</div>
+          <div class="card-title">卡密激活</div>
+          <div class="card-subtitle">进入小程序开始使用</div>
+        </div>
+        <div class="card-button">前往小程序</div>
+      </a>
+
+      <div class="tip">
+        点击进入小程序，输入英语日常卡密激活即可使用！
+      </div>
+    </div>
+  </body>
+</html>
