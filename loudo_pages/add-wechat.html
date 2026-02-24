@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>添加微信 - Loudo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui,
+          -apple-system, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 40px 30px;
+        max-width: 400px;
+        width: 100%;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+
+      .title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 30px;
+      }
+
+      .qrcode-wrapper {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .qrcode {
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .wechat-info {
+        margin-top: 15px;
+      }
+
+      .wechat-id {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 5px;
+      }
+
+      .wechat-name {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .tips {
+        background: #f0f4ff;
+        border-radius: 8px;
+        padding: 15px;
+        margin-top: 20px;
+      }
+
+      .tips-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #667eea;
+        margin-bottom: 8px;
+      }
+
+      .tips-text {
+        font-size: 13px;
+        color: #666;
+        line-height: 1.6;
+      }
+
+      .footer {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">长按扫码添加微信</h1>
+      <p class="subtitle">郭东超 - Loudo 朗读作者</p>
+
+      <div class="qrcode-wrapper">
+        <img id="qrcodeImg" class="qrcode" src="" alt="微信二维码" />
+      </div>
+
+      <div class="footer">Loudo © 2026</div>
+    </div>
+
+    <script>
+      // 配置微信二维码图片
+      const wechatQRCodes = [
+        "wechat-qr-1.jpg",  // 微信1: kritguo6
+        "wechat-qr-2.jpg",  // 微信2: kritguo2
+        "wechat-qr-3.jpg"   // 微信3: kritguo4
+        // 后续可以继续添加更多二维码图片
+      ];
+
+      // 随机选择一个微信二维码
+      function getRandomQRCode() {
+        const randomIndex = Math.floor(Math.random() * wechatQRCodes.length);
+        return wechatQRCodes[randomIndex];
+      }
+
+      // 页面加载时随机展示一个微信二维码
+      window.addEventListener('DOMContentLoaded', function() {
+        const qrcode = getRandomQRCode();
+        document.getElementById('qrcodeImg').src = qrcode;
+      });
+
+      // 防止截图（可选）- 增加安全性
+      // 禁用右键
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+      });
+
+      // 禁用长按菜单（移动端）- 但保留长按识别二维码功能
+      document.addEventListener('selectstart', function(e) {
+        if (e.target.tagName !== 'IMG') {
+          e.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>
