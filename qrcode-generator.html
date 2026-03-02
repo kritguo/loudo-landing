@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>二维码生成器 - Loudo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui,
+          -apple-system, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 40px 30px;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+
+      .title {
+        font-size: 28px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 30px;
+      }
+
+      .url-display {
+        background: #f5f5f5;
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 20px;
+        font-size: 13px;
+        color: #666;
+        word-break: break-all;
+        font-family: monospace;
+      }
+
+      .qrcode-wrapper {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      #qrcode {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #qrcode canvas {
+        border-radius: 8px;
+      }
+
+      .download-btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 14px 32px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+      }
+
+      .download-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+      }
+
+      .download-btn:active {
+        transform: translateY(0);
+      }
+
+      .tips {
+        margin-top: 20px;
+        font-size: 13px;
+        color: #999;
+        line-height: 1.6;
+      }
+
+      .footer {
+        margin-top: 30px;
+        font-size: 12px;
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">二维码生成器</h1>
+      <p class="subtitle">扫码访问微信添加页面</p>
+
+      <div class="url-display">
+        https://loudo.cn/loudo_pages/add-wechat
+      </div>
+
+      <div class="qrcode-wrapper">
+        <div id="qrcode"></div>
+      </div>
+
+      <button class="download-btn" onclick="downloadQRCode()">下载二维码</button>
+
+      <div class="tips">
+        点击下载按钮保存二维码图片<br>
+        用户扫码后会随机进入3个微信之一
+      </div>
+
+      <div class="footer">Loudo © 2026</div>
+    </div>
+
+    <script src="https://unpkg.com/qrcodejs2@0.0.2/qrcode.min.js"></script>
+    <script>
+      // 生成二维码
+      const url = 'https://loudo.cn/loudo_pages/add-wechat';
+
+      // 等待库加载完成
+      window.addEventListener('load', function() {
+        try {
+          new QRCode(document.getElementById('qrcode'), {
+            text: url,
+            width: 300,
+            height: 300,
+            colorDark: '#000000',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.H
+          });
+        } catch (error) {
+          console.error(error);
+          document.getElementById('qrcode').innerHTML = '<p style="color: red;">二维码生成失败，请检查网络连接</p>';
+        }
+      });
+
+      // 下载二维码
+      function downloadQRCode() {
+        const canvas = document.querySelector('#qrcode canvas');
+        const img = document.querySelector('#qrcode img');
+
+        if (canvas) {
+          // 如果是 canvas，转换为图片下载
+          const link = document.createElement('a');
+          link.download = 'loudo-add-wechat-qrcode.png';
+          link.href = canvas.toDataURL('image/png');
+          link.click();
+        } else if (img) {
+          // 如果是图片，直接下载
+          const link = document.createElement('a');
+          link.download = 'loudo-add-wechat-qrcode.png';
+          link.href = img.src;
+          link.click();
+        } else {
+          alert('二维码还未生成，请稍候或刷新页面重试');
+        }
+      }
+    </script>
+  </body>
+</html>
