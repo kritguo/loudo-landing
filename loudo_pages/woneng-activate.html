@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#100e0b">
+  <title>我能的 · 激活会员</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; min-height: 100svh; color: #f5f1ea; background: radial-gradient(ellipse at 50% 0%, #33271b 0, #14110e 45%, #0b0b0d 85%); font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
+    main { width: min(100%, 440px); margin: auto; padding: max(56px, env(safe-area-inset-top)) 28px max(36px, env(safe-area-inset-bottom)); text-align: center; }
+    .brand { display: flex; align-items: center; justify-content: center; gap: 10px; color: #d9c3a4; font-size: 16px; font-weight: 600; }
+    .brand img { width: 36px; height: 36px; border-radius: 10px; }
+    .hero { padding-top: clamp(60px, 13vh, 120px); }
+    .eyebrow { color: #bda98c; font-size: 13px; letter-spacing: 3px; }
+    h1 { margin: 18px 0; font-size: clamp(30px, 8vw, 38px); line-height: 1.4; letter-spacing: -.8px; }
+    .intro { margin: 0; color: #bcb5ac; font-size: 16px; line-height: 1.9; }
+    .steps { margin: 38px 0 30px; padding: 22px; text-align: left; border: 1px solid #dac3a41f; border-radius: 20px; background: #ffffff05; list-style: none; }
+    .steps li { display: flex; align-items: center; gap: 12px; font-size: 15px; line-height: 1.8; }
+    .steps li + li { margin-top: 16px; }
+    .number { display: grid; place-items: center; width: 26px; height: 26px; flex-shrink: 0; border-radius: 50%; background: #ddc6a616; color: #ddc6a6; font-size: 12px; }
+    .cta { display: block; width: 100%; padding: 18px 14px; border-radius: 100px; border: 0; background: linear-gradient(120deg, #ebdbc0, #cbb18e); color: #20180f; text-decoration: none; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer; }
+    .cta:hover { filter: brightness(1.05); }
+    .cta:focus-visible, summary:focus-visible { outline: 3px solid #f6dfb7; outline-offset: 5px; }
+    .cta:disabled { opacity: .5; cursor: not-allowed; }
+    .privacy { margin: 16px 0 32px; color: #9e978e; font-size: 12px; line-height: 1.8; }
+    details { color: #aba59d; font-size: 13px; line-height: 1.9; }
+    summary { cursor: pointer; padding: 8px; }
+    details p { text-align: left; padding: 0 8px; }
+    .preview { margin: 20px 0 0; color: #dfc9a8; font-size: 13px; }
+    .launch-help { padding: 16px; border-radius: 16px; background: #dac3a410; color: #ddc6a6; font-size: 14px; line-height: 1.8; }
+    footer { margin-top: 54px; color: #77726d; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand"><img src="woneng-mark.png" alt="" width="36" height="36">我能的</div>
+    <section class="hero" aria-labelledby="title">
+      <div class="eyebrow">专属陪伴 · 从这里开始</div>
+      <h1 id="title">激活你的专属陪伴</h1>
+      <p class="intro">打开微信小程序，<br>输入卡密或订单号，即可核验激活。</p>
+      <ol class="steps">
+        <li><span class="number">1</span>点击下方按钮，打开「我能的」</li>
+        <li><span class="number">2</span>在激活页输入卡密或订单号</li>
+      </ol>
+      <a class="cta" id="open-mini" data-mode="scheme" href="weixin://dl/business/?appid=wx97a7f4cc4e3abbe6&amp;path=pages/redeem/redeem&amp;env_version=release" rel="noreferrer">打开微信 · 前往激活</a>
+      <p id="launch-help" class="launch-help" role="status" tabindex="-1" hidden></p>
+      <p class="privacy">本网页不收集卡密或订单号。<br>激活操作在微信小程序内完成。</p>
+      <details>
+        <summary>没有打开微信？</summary>
+        <p>请在已安装微信的手机上打开此链接。如果当前应用拦截跳转，可从右上角菜单选择在系统浏览器中打开后重试。电脑端可复制本页链接到手机打开。</p>
+        <p>也可以在微信搜索「我能的」，从菜单进入「卡密激活」。</p>
+      </details>
+      
+    </section>
+    <footer>每天几句，更相信自己。</footer>
+  </main>
+  <script type="module" src="woneng-activation.mjs"></script>
+</body>
+</html>
